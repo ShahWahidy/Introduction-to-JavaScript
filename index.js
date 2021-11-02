@@ -20,9 +20,9 @@ Do the following:
    HINT: no function required
 */
 let votingAge = 18
-if(votingAge >= 18){
+if (votingAge >= 18) {
   console.log(true);
-}   
+}
 
 
 /*
@@ -35,9 +35,9 @@ Do the following:
 
    HINT: no function required
 */
-let num1  = 10;
-let num2  = 20;
-if(num1 < num2){
+let num1 = 10;
+let num2 = 20;
+if (num1 < num2) {
   num1 = num2
   console.log(num1)
 }
@@ -70,11 +70,11 @@ Do the following:
    3. Multiply a and b and return the answer
 */
 
-function multiply(a , b) {
+function multiply(a, b) {
   /*add your code here*/
   return a * b;
 }
-multiply(3,2);
+console.log(multiply(3, 2));
 
 
 /*🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 2 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀*/
@@ -89,7 +89,7 @@ Do the following:
 
 function dogYears(age) {
   /*add your code here*/
-  return age * 7; 
+  return age * 7;
 }
 
 dogYears(18);
@@ -131,7 +131,7 @@ function hungryDog(weight, age) {
     return weight * 0.03;
   } else if (age >= 1 && weight > 15) {
     return weight * 0.02;
-  } else if (age < 1 && age >= .0583) {
+  } else if (age < 1 && age >= 0.583) {
     return weight * 0.04;
   } else if (age < 0.583 && age >= 0.333) {
     return weight * 0.05;
@@ -162,9 +162,29 @@ RULES OF THE GAME: Scissors beats Paper | Paper beats Rock | Rock beats Scissors
 
 HINT: Remember that the order in which we pass in our arguments matters when it comes to parameters
 */
+let computer = Math.random()
+if (computer <= 0.34) {
+  computer = 'rock'
+} else if (computer <= 0.67) {
+  computer = 'scissor'
+} else if (computer > 0.67) {
+  computer = 'paper'
+}
 
 function game(user, computer) {
   /*add your code here*/
+  if (user === computer) {
+    return "it's a tie"
+  }
+  else if (user === 'rock' && computer === 'scissors') {
+    return "you win!"
+  } else if (user === 'paper' && computer === 'rock') {
+    return "you win!"
+  } else if (user === 'scissors' && computer === 'paper') {
+    return "you win!"
+  } else {
+    return "you lose!"
+  }
 }
 
 
@@ -213,7 +233,10 @@ Using the annoyingSong function below do the following:
 
 function annoyingSong(counter) {
   /*add your code here*/
-  
+  for (let i = counter; i > 0; i--) {
+    return `${counter} bottles of soda on the wall, ${counter} bottles of soda, take one down pass it around ${counter - 1} bottles of soda on the wall`
+  }
+
 }
 
 
@@ -234,19 +257,19 @@ Using the grade function below do the following:
 
 function grade(marks) {
   /*Your Code here */
-  if(marks >=90 && marks <= 100){
+  if (marks >= 90 && marks <= 100) {
     return 'you got an A'
-  }else if(marks >= 80 && marks <= 89){
+  } else if (marks >= 80 && marks <= 89) {
     return 'you got a B'
-  }else if(marks >= 70 && marks <= 79 ){
+  } else if (marks >= 70 && marks <= 79) {
     return 'you got a C'
-  }else if(marks >= 60 && marks <= 69){
+  } else if (marks >= 60 && marks <= 69) {
     return 'you got a D'
-  }else if(marks < 60){
+  } else if (marks < 60) {
     return 'you got an F'
   }
 }
-console.log(grade(65))
+
 
 
 /*💪💪💪💪💪💪💪💪💪💪 Stretch 💪💪💪💪💪💪💪💪💪💪*/
@@ -261,10 +284,20 @@ HINT - you may need to study tomorrow's content on arrays
 HINT - try looking up the .includes() method
 */
 
+let counter = 0;
 
-function vowelCounter(/*add your code here*/) {
+function vowelCounter(str) {
   /*add your code here*/
+  
+  for (let i = 0; i < str.length; i++) {
+    if (str[i] === 'a' || str[i] === 'A' || str[i] === 'E' || str[i] === 'e' || str[i] === 'i' || str[i] === 'I' || str[i] === 'O' || str[i] === 'o' || str[i] === 'U' || str[i] === 'u') {
+      counter++;
+    }
+  }
+
 }
+console.log(vowelCounter('AhmadWahidy'))
+console.log(counter)
 
 
 
